@@ -1,0 +1,39 @@
+{
+    "name": "michael-rojas",
+    "version": "0.0.0",
+    "dependencies": {
+        "angular": "^1.3.0",
+        "bootstrap-sass-official": "^3.2.0",
+        "angular-animate": "^1.3.0",
+        "angular-route": "^1.3.0",
+        "angular-sanitize": "^1.3.0",
+        "angular-touch": "^1.3.0",
+        "jquery.easing": "^1.3.1",
+        "font-awesome": "^4.6.3"
+    },
+    "devDependencies": {
+        "angular-mocks": "^1.3.0"
+    },
+    "appPath": "app",
+    "moduleName": "michaelRojasApp",
+    "overrides": {
+        "bootstrap": {
+            "main": [
+                "less/bootstrap.less",
+                "dist/css/bootstrap.css",
+                "dist/js/bootstrap.js"
+            ]
+        },
+        "font-awesome": {
+            "main": [
+                "css/font-awesome.min.css",
+                "fonts/FontAwesome.otf",
+                "fonts/fontawesome-webfont.eot",
+                "fonts/fontawesome-webfont.svg",
+                "fonts/fontawesome-webfont.ttf",
+                "fonts/fontawesome-webfont.woff",
+                "fonts/fontawesome-webfont.woff2"
+            ]
+        }
+    }
+}
