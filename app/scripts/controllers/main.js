@@ -8,12 +8,13 @@
  * Controller of the michaelRojasApp
  */
 angular.module('michaelRojasApp')
-    .controller('MainCtrl', function ($http, $uibModal, SliderService, ProgressService, PortfolioService, SerializeService) {
+    .controller('MainCtrl', function ($http, $uibModal, SliderService, ProgressService, PortfolioService, ResumeService, SerializeService) {
         var vm = this;
         vm.contact = {isProcessing: false};
         vm.sliders = SliderService.list();
         vm.progress = ProgressService.list();
         vm.portfolio = PortfolioService.list();
+        vm.resume = ResumeService.list();
 
         vm.fnNavigation = function(){
             // Offset for Main Navigation
