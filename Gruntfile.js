@@ -395,7 +395,8 @@ module.exports = function (grunt) {
                         '.htaccess',
                         '*.html',
                         'images/{,*/}*.{webp}',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'contact_me.php'
                     ]
                 }, {
                     expand: true,

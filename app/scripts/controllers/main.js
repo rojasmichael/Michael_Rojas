@@ -8,9 +8,9 @@
  * Controller of the michaelRojasApp
  */
 angular.module('michaelRojasApp')
-    .controller('MainCtrl', function ($uibModal, SliderService, PortfolioService) {
+    .controller('MainCtrl', function ($http, $uibModal, SliderService, PortfolioService, SerializeService) {
         var vm = this;
-        vm.contact = {};
+        vm.contact = {isProcessing: false};
         vm.sliders = SliderService.list();
         vm.portfolio = PortfolioService.list();
 
@@ -38,7 +38,21 @@ angular.module('michaelRojasApp')
         };
 
         vm.fnSendMail = function(contact){
-
+            contact.isProcessing = true;
+            var clone = angular.copy(contact);
+            delete clone.isProcessing;
+            $http({
+                method: 'POST',
+                url: 'contact_me.php',
+                data: SerializeService.serialize(clone),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).then(function () {
+                contact.isProcessing = false;
+                toastr.success("Email send successfully.", "Thank you!");
+            }, function () {
+                contact.isProcessing = false;
+                toastr.error("Email not send. Please try again.");
+            });
         };
 
         vm.fnInitMainPage = function(){

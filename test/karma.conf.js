@@ -32,7 +32,7 @@ module.exports = function(config) {
       'bower_components/jquery.easing/js/jquery.easing.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-scroll/angular-scroll.js',
-      'bower_components/protonet/jquery.inview/jquery.inview.js',
+      'bower_components/toastr/toastr.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

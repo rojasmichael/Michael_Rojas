@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel='stylesheet' href='bower_components/font-awesome/css/font-awesome.css' />
+    <link rel='stylesheet' href='bower_components/toastr/toastr.css' />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -54,8 +55,12 @@
 <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-scroll/angular-scroll.js"></script>
-<script src="bower_components/protonet/jquery.inview/jquery.inview.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
 <!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/jquery.inview.min.js -->
+<script src="scripts/vendor/jquery.inview.min.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -64,6 +69,7 @@
 <script src="scripts/directives/progress.bar/progress.bar.js"></script>
 <script src="scripts/services/slider.js"></script>
 <script src="scripts/services/portfolio.js"></script>
+<script src="scripts/services/serialize.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/portfolio.modal.js"></script>
 <!-- endbuild -->
