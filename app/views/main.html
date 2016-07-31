@@ -98,75 +98,12 @@
                 </div>
                 <div class="col-sm-6" progress-bar>
                     <div class="our-skills">
-                        <div class="single-skill">
-                            <p class="lead">User Experiances</p>
+                        <div class="single-skill" ng-repeat="item in main.progress track by $index" >
+                            <p class="lead" ng-bind="item.name"></p>
 
                             <div class="progress">
                                 <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="95">95%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill">
-                            <p class="lead">Web Design</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="67">67%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill">
-                            <p class="lead">Programming</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="72">72%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill wow fadeInDown">
-                            <p class="lead">Javascript</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="60">60%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill">
-                            <p class="lead">jQuery</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="75">75%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill">
-                            <p class="lead">Angular</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="70">70%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill">
-                            <p class="lead">HTML</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="85">85%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-skill">
-                            <p class="lead">CSS</p>
-
-                            <div class="progress">
-                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
-                                     aria-valuetransitiongoal="77">77%
+                                     aria-valuetransitiongoal="{{item.value}}" ng-bind="item.value +'%'">
                                 </div>
                             </div>
                         </div>
