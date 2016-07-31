@@ -1,0 +1,22 @@
+<div class="modal-content">
+    <div class="close-modal" ng-click="pm.fnCancel()">
+        <div class="lr">
+            <div class="rl">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 ng-bind="pm.portfolioItem.heading">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-responsive img-centered" ng-src="{{pm.portfolioItem.modal_image}}" alt="">
+                    <p ng-repeat="p in pm.portfolioItem.details track by $index" ng-bind-html="p"></p>
+                    <button type="button" class="btn btn-primary" ng-click="pm.fnCancel()"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -22,7 +22,8 @@
                 -moz-transition: all ease 0.5s;
 
                 &:hover {
-                    opacity: 1;
+                    background-color: $brand-primary;
+                    opacity: 0.9;
                 }
 
                 .portfolio-hover-content {

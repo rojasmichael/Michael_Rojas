@@ -183,100 +183,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="item in main.portfolio track by $index">
+                    <a href="javascript:void(0);" class="portfolio-link" ng-click="main.fnOpenPortfolioModal(item)">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img ng-src="../images/portfolio/roundicons.png" class="img-responsive" alt="">
+                        <img ng-src="{{item.image}}" class="img-responsive" alt="">
                     </a>
 
                     <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
+                        <h4 ng-bind="item.heading"></h4>
 
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img ng-src="../images/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img ng-src="../images/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img ng-src="../images/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img ng-src="../images/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img ng-src="../images/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-
-                        <p class="text-muted">Website Design</p>
+                        <p class="text-muted" ng-bind="item.sub_heading"></p>
                     </div>
                 </div>
             </div>
@@ -298,7 +218,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" ng-src="../images/about/1.jpg" alt="">
+                                <img class="img-circle img-responsive" ng-src="images/resume/1.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -318,7 +238,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" ng-src="../images/about/2.jpg" alt="">
+                                <img class="img-circle img-responsive" ng-src="images/resume/2.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -338,7 +258,7 @@
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" ng-src="../images/about/3.jpg" alt="">
+                                <img class="img-circle img-responsive" ng-src="images/resume/3.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -358,7 +278,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" ng-src="../images/about/4.jpg" alt="">
+                                <img class="img-circle img-responsive" ng-src="images/resume/4.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -395,22 +315,22 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img ng-src="../images/logos/envato.jpg" class="img-responsive img-centered" alt="">
+                        <img ng-src="images/logos/envato.jpg" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img ng-src="../images/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
+                        <img ng-src="images/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img ng-src="../images/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
+                        <img ng-src="images/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img ng-src="../images/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
+                        <img ng-src="images/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
             </div>
