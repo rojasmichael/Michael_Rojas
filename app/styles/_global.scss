@@ -1,0 +1,81 @@
+// Global Components
+
+body {
+    overflow-x: hidden;
+    @include body-font;
+}
+
+.text-muted {
+    color: $gray;
+}
+
+.text-primary {
+    color: $brand-primary;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a,
+a.active,
+a:active,
+a:focus,
+a:hover {
+    outline: none;
+}
+
+a {
+    color: $brand-primary;
+}
+
+a.active,
+a:active,
+a:focus,
+a:hover {
+    color: darken($brand-primary, 10%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include heading-font;
+    font-weight: 700;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: $gray-lighter;
+}
+
+.bg-darkest-gray {
+    background-color: $gray-darkest;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+    @include button-variant(white, $brand-primary, $brand-primary);
+    @include heading-font;
+    font-weight: 700;
+}
+
+.btn-xl {
+    @include button-variant(white, $brand-primary, $brand-primary);
+    @include heading-font;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}

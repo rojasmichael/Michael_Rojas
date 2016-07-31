@@ -1,0 +1,285 @@
+<div class="main-page" ng-init="main.fnInitMainPage()">
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#main-slider" du-smooth-scroll du-scrollspy duration="1000">Michael
+                    Rojas</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#main-slider" du-smooth-scroll du-scrollspy duration="1000">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" du-smooth-scroll du-scrollspy duration="1000">About</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" du-smooth-scroll du-scrollspy duration="1000">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#resume" du-smooth-scroll du-scrollspy duration="1000">Resume</a>
+                    </li>
+                    <li>
+                        <a href="#contact" du-smooth-scroll du-scrollspy duration="1000">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!--START : HOME SLIDER-->
+    <div id="main-slider" class="main-slider" page-height>
+        <div uib-carousel active="0" interval="5000" no-wrap="false">
+            <div uib-slide ng-repeat="slide in main.sliders track by $index" index="$index">
+                <img ng-src="{{slide.image}}" page-height image-height="true">
+
+                <div class="carousel-caption">
+                    <h1 class="animated fadeInLeftBig" ng-bind-html="slide.title"></h1>
+
+                    <p class="animated fadeInRightBig" ng-repeat="sub_title in slide.sub_titles"
+                       ng-bind="sub_title"></p>
+                    <a href="#about" class="btn btn-xl"
+                       du-smooth-scroll du-scrollspy duration="1000">Tell Me More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END : HOME SLIDER-->
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>I'm a website developer with 1.5 years experience in website development and 1 year experience in
+                        javascript development. I’m willing to learn new technologies and standards in developing.</p>
+
+                    <p>I am highly capable of testing a variety of internet applications and finding solutions to
+                        clients needs and problems. I enjoy coding new website and applications develops from a brief
+                        and making a website that clients will really love. I'm currently available for projects small
+                        or large, so if you're interested in hiring me.</p>
+
+                    <p>I would really appreciate the chance to share my skills and enthusiasm with you as follows:</p>
+
+                    <p>Good interpersonal skills, consistently building rapport with clients and coworkers.</p>
+
+                    <p>Experienced in multiple platforms including windows desktop from Windows XP to Windows 8, Windows
+                        Server, Ubuntu.</p>
+
+                    <p>I'm working with front end web technologies such as HTML, CSS, Javascript, AJAX, JSON and
+                        advanced knowledge jQuery, jQuery Mobile, jQuery Widget, Angular JS, Angular Material, Angular
+                        Formly,
+                        Bootstrap, Zurb Foundation, Coffee Script, C3 JS.</p>
+
+                    <p>I'm working with back end technology such as Node JS for creating REST API call. I'm also
+                        working with StrongLoop to create REST call.</p>
+
+                    <p>Advanced knowledge of scripting language such as PHP with joomla framework and JSP with Spring
+                        framework.</p>
+
+                    <p>Advanced knowledge of Git, Bitbucket, Grunt, Yeoman, Bower.</p>
+                </div>
+                <div class="col-sm-6" progress-bar>
+                    <div class="our-skills">
+                        <div class="single-skill" ng-repeat="item in main.progress track by $index">
+                            <p class="lead" ng-bind="item.name"></p>
+
+                            <div class="progress">
+                                <div class="progress-bar six-sec-ease-in-out" role="progressbar"
+                                     aria-valuetransitiongoal="{{item.value}}" ng-bind="item.value +'%'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Portfolio</h2>
+
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="item in main.portfolio track by $index">
+                    <a href="javascript:void(0);" class="portfolio-link" ng-click="main.fnOpenPortfolioModal(item)">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img ng-src="{{item.image}}" class="img-responsive" alt="">
+                    </a>
+
+                    <div class="portfolio-caption">
+                        <h4 ng-bind="item.heading"></h4>
+
+                        <p class="text-muted" ng-bind="item.sub_heading"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Resume</h2>
+
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li ng-repeat="item in main.resume track by $index"
+                            ng-class="$index%2 === 0 ? 'timeline-inverted' : ''">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" ng-src="{{item.image}}" alt="{{item.heading}}">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 ng-bind="item.heading"></h4>
+                                    <h4 class="subheading" ng-bind="item.sub_heading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted" ng-bind="item.details"></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of my
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name *" id="name"
+                                           ng-model="main.contact.name" required>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.name.$touched">
+                                        <span class="text-danger" ng-if="sentMessage.name.$error.required">Please enter your name.</span>
+                                    </div>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email"
+                                           ng-model="main.contact.email" required>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.email.$touched">
+                                        <span class="text-danger" ng-if="sentMessage.email.$error.required">Please enter your email address.</span>
+                                            <span class="text-danger" ng-if="sentMessage.email.$error.email">
+                                                This field must be a valid email address.</span>
+                                    </div>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" name="phone" placeholder="Your Phone *" id="phone"
+                                           ng-model="main.contact.phone" required>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.phone.$touched">
+                                    <span class="text-danger"
+                                          ng-if="sentMessage.phone.$error.required">Please enter your phone number.</span>
+                                    </div>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" placeholder="Your Message *" id="message"
+                                              ng-model="main.contact.message" required></textarea>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.message.$touched">
+                                    <span class="text-danger"
+                                          ng-if="sentMessage.message.$error.required">Please enter a message.</span>
+                                    </div>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl"
+                                        ng-disabled="main.contact.isProcessing"
+                                        ng-click="sentMessage.$valid && main.fnSendMail(main.contact)">
+                                    <span ng-if="main.contact.isProcessing"><i class="fa fa-spinner fa-spin"></i></span>
+                                    <span ng-if="!main.contact.isProcessing">Send Message</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

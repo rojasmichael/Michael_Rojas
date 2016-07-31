@@ -1,0 +1,50 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import 'variables';
+@import 'mixins';
+@import 'global';
+@import 'navigation';
+@import 'sliders';
+@import 'global-section';
+@import 'progress';
+@import 'portfolio';
+@import 'timeline';
+@import 'contact';
+@import 'footer';
+@import 'social-buttons';
+@import 'portfolio-modal';
+
+.btn.active,
+.btn:active,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+}
+
+// Highlight Color Customization
+
+::-moz-selection {
+    text-shadow: none;
+    background: $brand-primary;
+}
+
+::selection {
+    text-shadow: none;
+    background: $brand-primary;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    -webkit-tap-highlight-color: $brand-primary;
+}
+
