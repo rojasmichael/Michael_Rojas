@@ -8,8 +8,9 @@
  * Controller of the michaelRojasApp
  */
 angular.module('michaelRojasApp')
-    .controller('MainCtrl', function () {
+    .controller('MainCtrl', function (SliderService) {
         var vm = this;
+        vm.sliders = SliderService.list();
 
         vm.fnNavigation = function(){
             // jQuery for page scrolling feature - requires jQuery Easing plugin

@@ -1,0 +1,45 @@
+.main-slider {
+    img {
+        width: 100%;
+    }
+    .carousel-inner {
+        .item {
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, .7);
+            }
+        }
+    }
+    .carousel-caption {
+        top: 30%;
+        text-align: center;
+        text-transform: uppercase;
+        z-index: 15;
+        font-size: 18px;
+        font-weight: 300;
+        color: #fff;
+        h1 {
+            color: #fff;
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .btn-start {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 14px 40px;
+            border: 1px solid #6e6d6c;
+            border-radius: 4px;
+            margin-top: 40px;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
