@@ -10,6 +10,7 @@
 angular.module('michaelRojasApp')
     .controller('MainCtrl', function ($uibModal, SliderService, PortfolioService) {
         var vm = this;
+        vm.contact = {};
         vm.sliders = SliderService.list();
         vm.portfolio = PortfolioService.list();
 
@@ -36,6 +37,9 @@ angular.module('michaelRojasApp')
             });
         };
 
+        vm.fnSendMail = function(contact){
+
+        };
 
         vm.fnInitMainPage = function(){
             vm.fnNavigation();

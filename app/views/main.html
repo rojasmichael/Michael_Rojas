@@ -8,7 +8,8 @@
                         data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#main-slider" du-smooth-scroll du-scrollspy duration="1000">Michael Rojas</a>
+                <a class="navbar-brand" href="#main-slider" du-smooth-scroll du-scrollspy duration="1000">Michael
+                    Rojas</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,10 +42,12 @@
         <div uib-carousel active="0" interval="5000" no-wrap="false">
             <div uib-slide ng-repeat="slide in main.sliders track by $index" index="$index">
                 <img ng-src="{{slide.image}}" page-height image-height="true">
+
                 <div class="carousel-caption">
                     <h1 class="animated fadeInLeftBig" ng-bind-html="slide.title"></h1>
 
-                    <p class="animated fadeInRightBig" ng-repeat="sub_title in slide.sub_titles" ng-bind="sub_title"></p>
+                    <p class="animated fadeInRightBig" ng-repeat="sub_title in slide.sub_titles"
+                       ng-bind="sub_title"></p>
                     <a href="#about" class="btn btn-xl"
                        du-smooth-scroll du-scrollspy duration="1000">Tell Me More</a>
                 </div>
@@ -81,7 +84,8 @@
                         Server, Ubuntu.</p>
 
                     <p>I'm working with front end web technologies such as HTML, CSS, Javascript, AJAX, JSON and
-                        advanced knowledge jQuery, jQuery Mobile, jQuery Widget, Angular JS, Angular Material, Angular Formly,
+                        advanced knowledge jQuery, jQuery Mobile, jQuery Widget, Angular JS, Angular Material, Angular
+                        Formly,
                         Bootstrap, Zurb Foundation, Coffee Script, C3 JS.</p>
 
                     <p>I'm working with back end technology such as Node JS for creating REST API call. I'm also
@@ -353,38 +357,49 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required
-                                           data-validation-required-message="Please enter your name.">
-
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name *" id="name"
+                                           ng-model="main.contact.name" required>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.name.$touched">
+                                        <span class="text-danger" ng-if="sentMessage.name.$error.required">Please enter your name.</span>
+                                    </div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email"
-                                           required
-                                           data-validation-required-message="Please enter your email address.">
-
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email"
+                                           ng-model="main.contact.email" required>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.email.$touched">
+                                        <span class="text-danger" ng-if="sentMessage.email.$error.required">Please enter your email address.</span>
+                                            <span class="text-danger" ng-if="sentMessage.email.$error.email">
+                                                This field must be a valid email address.</span>
+                                    </div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone"
-                                           required
-                                           data-validation-required-message="Please enter your phone number.">
-
+                                    <input type="tel" class="form-control" name="phone" placeholder="Your Phone *" id="phone"
+                                           ng-model="main.contact.phone" required>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.phone.$touched">
+                                    <span class="text-danger"
+                                          ng-if="sentMessage.phone.$error.required">Please enter your phone number.</span>
+                                    </div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                <textarea class="form-control" placeholder="Your Message *" id="message" required
-                          data-validation-required-message="Please enter a message."></textarea>
-
+                                    <textarea class="form-control" name="message" placeholder="Your Message *" id="message"
+                                              ng-model="main.contact.message" required></textarea>
+                                    <div ng-if="sentMessage.$submitted || sentMessage.message.$touched">
+                                    <span class="text-danger"
+                                          ng-if="sentMessage.message.$error.required">Please enter a message.</span>
+                                    </div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl"
+                                        ng-click="sentMessage.$valid && main.fnSendMail(main.contact)">Send Message</button>
                             </div>
                         </div>
                     </form>
