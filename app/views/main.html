@@ -8,26 +8,26 @@
                         data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#main-slider">Michael Rojas</a>
+                <a class="navbar-brand" href="#main-slider" du-smooth-scroll du-scrollspy duration="1000">Michael Rojas</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#main-slider">Home</a>
+                        <a href="#main-slider" du-smooth-scroll du-scrollspy duration="1000">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a href="#about" du-smooth-scroll du-scrollspy duration="1000">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a href="#portfolio" du-smooth-scroll du-scrollspy duration="1000">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#resume">Resume</a>
+                        <a href="#resume" du-smooth-scroll du-scrollspy duration="1000">Resume</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a href="#contact" du-smooth-scroll du-scrollspy duration="1000">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -45,7 +45,8 @@
                     <h1 class="animated fadeInLeftBig" ng-bind-html="slide.title"></h1>
 
                     <p class="animated fadeInRightBig" ng-repeat="sub_title in slide.sub_titles" ng-bind="sub_title"></p>
-                    <a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>
+                    <a href="#about" class="btn btn-xl"
+                       du-smooth-scroll du-scrollspy duration="1000">Tell Me More</a>
                 </div>
             </div>
         </div>
