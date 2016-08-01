@@ -59,7 +59,7 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <div class="row">
+            <div class="row wow fadeInUp" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About</h2>
 
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 wow fadeInDown" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                     <p>I'm a website developer with 1.5 years experience in website development and 1 year experience in
                         javascript development. I’m willing to learn new technologies and standards in developing.</p>
 
@@ -98,7 +98,8 @@
                 </div>
                 <div class="col-sm-6" progress-bar>
                     <div class="our-skills">
-                        <div class="single-skill" ng-repeat="item in main.progress track by $index">
+                        <div class="single-skill wow fadeInDown" ng-repeat="item in main.progress track by $index"
+                             data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                             <p class="lead" ng-bind="item.name"></p>
 
                             <div class="progress">
@@ -116,7 +117,7 @@
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="parallax">
         <div class="container">
-            <div class="row">
+            <div class="row wow fadeInUp" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Portfolio</h2>
 
@@ -124,7 +125,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="item in main.portfolio track by $index">
+                <div class="col-md-4 col-sm-6 portfolio-item wow" ng-repeat="item in main.portfolio track by $index"
+                     ng-class="{'fadeInLeftBig': $index%2==0,'fadeInRightBig':$index%2!=0}"
+                     data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                     <a href="javascript:void(0);" class="portfolio-link" ng-click="main.fnOpenPortfolioModal(item)">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -147,7 +150,7 @@
     <!-- Resume Section -->
     <section id="resume">
         <div class="container">
-            <div class="row">
+            <div class="row wow fadeInUp" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Resume</h2>
 
@@ -162,7 +165,9 @@
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" ng-src="{{item.image}}" alt="{{item.heading}}">
                             </div>
-                            <div class="timeline-panel">
+                            <div class="timeline-panel wow"
+                                 ng-class="$index%2 === 0 ? 'fadeInLeftBig' : 'fadeInRightBig'"
+                                 data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                                 <div class="timeline-heading">
                                     <h4 ng-bind="item.heading"></h4>
                                     <h4 class="subheading" ng-bind="item.sub_heading"></h4>
@@ -188,7 +193,7 @@
     <!-- Contact Section -->
     <section id="contact" class="parallax">
         <div class="container">
-            <div class="row">
+            <div class="row wow fadeInUp" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
 
@@ -199,18 +204,22 @@
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 wow fadeInUp" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name *" id="name"
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name *"
+                                           id="name"
                                            ng-model="main.contact.name" required>
+
                                     <div ng-if="sentMessage.$submitted || sentMessage.name.$touched">
                                         <span class="text-danger" ng-if="sentMessage.name.$error.required">Please enter your name.</span>
                                     </div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email"
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email *"
+                                           id="email"
                                            ng-model="main.contact.email" required>
+
                                     <div ng-if="sentMessage.$submitted || sentMessage.email.$touched">
                                         <span class="text-danger" ng-if="sentMessage.email.$error.required">Please enter your email address.</span>
                                             <span class="text-danger" ng-if="sentMessage.email.$error.email">
@@ -219,8 +228,10 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" name="phone" placeholder="Your Phone *" id="phone"
+                                    <input type="tel" class="form-control" name="phone" placeholder="Your Phone *"
+                                           id="phone"
                                            ng-model="main.contact.phone" required>
+
                                     <div ng-if="sentMessage.$submitted || sentMessage.phone.$touched">
                                     <span class="text-danger"
                                           ng-if="sentMessage.phone.$error.required">Please enter your phone number.</span>
@@ -228,10 +239,12 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 wow fadeInUp" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="message" placeholder="Your Message *" id="message"
+                                    <textarea class="form-control" name="message" placeholder="Your Message *"
+                                              id="message"
                                               ng-model="main.contact.message" required></textarea>
+
                                     <div ng-if="sentMessage.$submitted || sentMessage.message.$touched">
                                     <span class="text-danger"
                                           ng-if="sentMessage.message.$error.required">Please enter a message.</span>
@@ -261,7 +274,7 @@
                 <div class="col-md-4">
                     <span class="copyright">Copyright &copy; Your Website 2016</span>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 wow bounceIn" data-wow-duration="{{main.wowDuration}}" data-wow-delay="{{main.wowDelay}}">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
