@@ -1,0 +1,66 @@
+
+.parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    h1 {
+        color: #fff;
+    }
+    h2 {
+        color: #fff;
+    }
+    h3 {
+        color: #fff;
+    }
+    h4 {
+        color: #fff;
+    }
+    h5 {
+        color: #fff;
+    }
+    h6 {
+        color: #fff;
+    }
+    input[type="text"] {
+        font-weight: 300;
+        color: #fff;
+        &:hover {
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+    input[type="email"] {
+        font-weight: 300;
+        color: #fff;
+        &:hover {
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+    input[type="url"] {
+        font-weight: 300;
+        color: #fff;
+        &:hover {
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+    input[type="password"] {
+        font-weight: 300;
+        color: #fff;
+        &:hover {
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+    textarea {
+        font-weight: 300;
+        color: #fff;
+        &:hover {
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+}
