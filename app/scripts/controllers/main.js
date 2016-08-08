@@ -15,6 +15,8 @@ angular.module('michaelRojasApp')
         vm.progress = ProgressService.list();
         vm.portfolio = PortfolioService.list();
         vm.resume = ResumeService.list();
+        vm.wowDelay = "500ms";
+        vm.wowDuration = "1000ms";
 
         vm.fnNavigation = function(){
             // Offset for Main Navigation
@@ -59,6 +61,7 @@ angular.module('michaelRojasApp')
 
         vm.fnInitMainPage = function(){
             vm.fnNavigation();
+            new WOW().init();
         };
 
     });
